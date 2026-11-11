@@ -11,6 +11,11 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
+reporter: [
+  ['html'],
+  ['github'] // Aktiviert GitHub-spezifische Annotations direkt im Code-Diff
+]
 export default defineConfig({
   testDir: './',
   testMatch: '**/*.spec.ts',
