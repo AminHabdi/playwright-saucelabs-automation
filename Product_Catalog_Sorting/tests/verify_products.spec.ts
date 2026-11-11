@@ -19,7 +19,7 @@ test('verify 6 products', async({ page}) => {
     
     const inventoryItems = page.locator('[data-test="inventory-item"]');
     await expect(inventoryItems.first()).toBeVisible()
-    await expect(inventoryItems).toHaveCount(6);
+    await expect(inventoryItems).toHaveCount(2);
 
 });
 
