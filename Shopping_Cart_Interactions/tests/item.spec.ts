@@ -17,7 +17,8 @@ test.beforeEach(async ({ page }) => {
 test('Add items to the cart', async({page}) => {
     const inventory = new Inventory(page);
     await inventory.addItemToCart();
-    await inventory.yourcart(); 
+    await inventory.yourcart();
+
 
     await expect(page).toHaveURL(CART_URL)
     const text = page.getByText('Your Cart');
@@ -41,7 +42,7 @@ test('Complete Order Checkout', async({ page }) => {
     await inventory.checkout();
 
     const check_your_info = page.getByText('Checkout: Your Information')
-    expect(check_your_info).toBeVisible();
+    await expect(check_your_info).toBeVisible();
 
 });
 
