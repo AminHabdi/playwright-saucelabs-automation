@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import { LoginPage } from '../../Authentication_and_Session_Management/resources/page_object/login_valid_user';
+import { LoginPage } from '../../Authentication_and_Session_Management/resources/page_object/LoginPage';
 import loginData from '../../Authentication_and_Session_Management/resources/test_data/login_data.json';
 import { BASE_URL } from '../../Authentication_and_Session_Management/resources/commenWeb';
 
