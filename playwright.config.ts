@@ -14,7 +14,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 reporter: [
   ['html'],
-  ['github'] // Aktiviert GitHub-spezifische Annotations direkt im Code-Diff
+  ['github']
 ]
 export default defineConfig({
   testDir: './',

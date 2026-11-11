@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL } from '../resources/commenWeb';
-import { LoginPage } from '../resources/page_object/LoginPage.ts';
-import loginData from '../resources/test_data/login_data.json';
+import { LoginPage } from '../../page_object/LoginPage';
+import loginData from '../../resources/test_data/login_data.json';
+import { BASE_URL } from '../../resources/commenWeb';
 
 test.beforeEach(async ({ page }) => {
     await page.goto(BASE_URL);

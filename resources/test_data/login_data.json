@@ -13,6 +13,11 @@
     "username": "standard_user",
     "password": "secret_sauce1",
     "expected": "error"
+  },
+  "forumParams": {
+    "firstname": "HA",
+    "lastname": "HA",
+    "zipcode": "97080"
   }
 
 }

@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-import { LoginPage } from '../../Authentication_and_Session_Management/resources/page_object/LoginPage';
-import loginData from '../../Authentication_and_Session_Management/resources/test_data/login_data.json';
-import { BASE_URL } from '../../Authentication_and_Session_Management/resources/commenWeb';
+import { LoginPage } from '../../page_object/LoginPage';
+import loginData from '../../resources/test_data/login_data.json';
+import { BASE_URL } from '../../resources/commenWeb';
 
 test.beforeEach(async ({ page }) => {
     await page.goto(BASE_URL);
@@ -19,7 +19,7 @@ test('verify 6 products', async({ page}) => {
     
     const inventoryItems = page.locator('[data-test="inventory-item"]');
     await expect(inventoryItems.first()).toBeVisible()
-    await expect(inventoryItems).toHaveCount(2);
+    await expect(inventoryItems).toHaveCount(6);
 
 });
 
