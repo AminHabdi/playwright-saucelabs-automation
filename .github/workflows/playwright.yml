@@ -1,4 +1,5 @@
 name: Playwright Tests (SauceDemo)
+
 on:
   push:
     branches: [ main, master ]
@@ -6,6 +7,7 @@ on:
     branches: [ main, master ]
   schedule:
     - cron: '0 2 * * *'  
+
 jobs:
   test:
     timeout-minutes: 60
@@ -18,15 +20,20 @@ jobs:
         
     steps:
     - uses: actions/checkout@v4
+
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+
     - name: Install dependencies
       run: npm ci
-    - name: Install Playwright Browsers
+
+    - name: Install Playwright Browsers and Dependencies
+      run: npx playwright install --with-deps
+
+    - name: Run Playwright tests with Sharding
       run: npx playwright test --project=chromium --shard=${{ matrix.shard }}/2
-    - name: Run Playwright tests
-      run: npx playwright test --project=chromium
+
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:

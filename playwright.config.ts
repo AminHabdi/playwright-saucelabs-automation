@@ -16,6 +16,10 @@ reporter: [
   ['html'],
   ['github']
 ]
+
+
+
+
 export default defineConfig({
   testDir: './',
   testMatch: '**/*.spec.ts',
@@ -36,6 +40,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+
+    // using chrome browser
+    channel: 'chrome',
   },
 
   /* Configure projects for major browsers */
